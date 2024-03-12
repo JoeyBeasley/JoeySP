@@ -17,3 +17,6 @@ This project will use two things I am passionate about, voiceover work and desig
 
 I will need to spend time researching and understanding character design a lot better and learn how to design a visual novel. I should take programming a game through Python into consideration as well, since I only had one class covering that language.
 
+I plan to get started on this next semester, as the current one is still underway and rather busy.
+
+April 8-Proposal and Requirements Document
