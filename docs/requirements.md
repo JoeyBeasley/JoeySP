@@ -6,7 +6,7 @@ Criteria 1: Characters and Text should appear
   
   Fit Criterion: If both of these are displayed, it works.
 
-
+________________________________________________________________
 Criteria 2: Text Options should appear and be clickable
   
   Motivation: Selecting text-based options is what moves the game forward. Visual Novel style games rely on this     so that the plot and gameplay can progress.
