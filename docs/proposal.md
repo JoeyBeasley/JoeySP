@@ -18,7 +18,7 @@ I plan to create a visual novel type of game where you take on the role of a com
 For the design, I plan to use Python.
 
 ## Libraries, Keys, and Tools
-My main development key is Ren'py, which runs on Python. It is commonly used to create visual novels. The drawings and character deisgns will be done on ClipStudioPaint. The voices are to be recorded in Audacity.
+My main development key is Ren'py, which runs on Python. It is commonly used to create visual novels. The drawings and character deisgns will be done on Clip Studio Paint. The voices are to be recorded in Audacity.
 
 ## Additional Hardware/Software
 I don't know of any additional software or equipment, outisde of maybe a Flash drive for storing data
@@ -27,7 +27,7 @@ I don't know of any additional software or equipment, outisde of maybe a Flash d
 This project will use two things I am passionate about, voiceover work and designing visuals. A challenge will be added for programming games like this and giving indivdual trust stats for the characters. I have also never designed a visual novel or any game of this callibur. Being able to do what my major does while also incorporating my passions are what a senior project like this should accomplish.
 
 ## Future Research
-I will need to spend time researching and understanding character design a lot better and learn how to design a visual novel. I should take programming a game through Python into consideration as well, since I only had one class covering that language.
+I will need to spend time researching and understanding character design a lot better and learn how to design a visual novel. I should take programming a game through Python into consideration as well, since I only had one class covering that language. I need to learn how to map all of this out, import PNG or JPEG's of the clip files the characters will be drawn on. Learning how to insert sound files for the characters talking will add to the immersion.
 
 ## Schedule
 I plan to get started on this next semester, as the current one is still underway and rather busy.
