@@ -1,6 +1,9 @@
 Criteria 1: Characters and Text should appear
+  
   Motivation: Players should be able to see and read what is going on in-game
+  
   Examples: When a character is talking to the player and soemthing is happening, we should be able to see the       character, the background, and text displaying what they are saying.
+  
   Fit Criterion: If both of these are displayed, it works.
 
 
