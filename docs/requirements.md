@@ -54,8 +54,35 @@ Criteria 6: Counting who is gone
   ________________________________________________________________
 Criteria 7: Play the right audio file
  
-  Motivation: The correct audio should play for the respective charcter and their dialogue.
+  Motivation: The correct audio should play for the respective character and their dialogue.
   
   Examples: The tehcnician has a younger, higher piteched voice, while the engineer has a deeper, gruffer voice. It is important that these two do not get mixed up.
   
   Fit Criterion: Hearing the audio play for the right line and character.
+
+________________________________________________________________
+Criteria 8: Make the player's name enterable
+ 
+  Motivation: When starting the game, players should enter the name they want to be referred by.
+  
+  Examples: The name entered at the beggining will be stored in the game.
+  
+  Fit Criterion: Checking the name variable
+
+________________________________________________________________
+Criteria 9: Have the characters refer to the player by their entered name.
+ 
+  Motivation: Once the name is added, it will be included in a name string
+  
+  Examples: When the technician acknowldges you, he will say, "Hello Captain (name)! Shall we head out?"
+  
+  Fit Criterion: Testing the name variable in an in-game string.
+
+________________________________________________________________
+Criteria 10: Let players save progress
+ 
+  Motivation: A session's data and progress should be saved.
+  
+  Examples: If a player needs to do something else and come back later, the can click the save button to hold their data.
+  
+  Fit Criterion: Testing the save feature to see if everything from the session is still intact.
