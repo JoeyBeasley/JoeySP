@@ -40,4 +40,22 @@ Criteria 5: Counting who is alive
   
   Examples: The game starts off at the max number of crew members, and if that number is the same by the end, the best ending is rewarded.
   
-  Fit Criterion: Hearing the audio.
+  Fit Criterion: Running tests on the code to see if the counter keeps up with who is alive.
+
+________________________________________________________________
+Criteria 6: Counting who is gone
+ 
+  Motivation: There should be an internal counter capping at the number of members who died
+  
+  Examples: The counter starts at 0, with the number going up everytime a crew member is lost along the way. The higher the count, the worse the ending.
+  
+  Fit Criterion: Testing to see if the counter increased when a teammate is eliminated.
+
+  ________________________________________________________________
+Criteria 7: Play the right audio file
+ 
+  Motivation: The correct audio should play for the respective charcter and their dialogue.
+  
+  Examples: The tehcnician has a younger, higher piteched voice, while the engineer has a deeper, gruffer voice. It is important that these two do not get mixed up.
+  
+  Fit Criterion: Hearing the audio play for the right line and character.
