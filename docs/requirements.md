@@ -4,7 +4,7 @@ Criteria 1: Characters and Text should appear
   
   Examples: When a character is talking to the player and soemthing is happening, we should be able to see the       character, the background, and text displaying what they are saying.
   
-  Fit Criterion: If both of these are displayed, it works.
+  Fit Criterion: Everytime a character speaks, a text appears in a readable font of at least 12 pts.
 
 ________________________________________________________________
 Criteria 2: Text Options should appear and be clickable
