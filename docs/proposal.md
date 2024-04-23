@@ -33,3 +33,8 @@ I will need to spend time researching and understanding character design a lot b
 I plan to get started on this next semester, as the current one is still underway and rather busy.
 * Spring 2024
     *April 8-Proposal and Requirements Document
+* Fall 2024
+     *September-Get started on the character designs and voice work. Map out exactly where everything goes.
+     *October-Create prototype
+*Spring 2025
+   *April- Have the project completed and uploaded
