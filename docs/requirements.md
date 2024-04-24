@@ -86,3 +86,102 @@ Criteria 10: Let players save progress
   Examples: If a player needs to do something else and come back later, the can click the save button to hold their data.
   
   Fit Criterion: Testing the save feature to see if everything from the session is still intact.
+
+________________________________________________________________
+Criteria 11: Let players see previous text
+ 
+  Motivation: There should be an option to view previously displayed text and dialogue
+  
+  Examples: When clicking the log button, players should be able to read something that was said a few boxes ago
+  
+  Fit Criterion: Clicking the button and viewing previously displayed text. I can do this by saving the text to an array after being cleared.
+
+________________________________________________________________
+Criteria 12: Make the different paths lead to different stories and scenarios
+ 
+  Motivation: This is a visual novel style adventure where your actions count, so some actions must lead to a unique situation
+  
+  Examples: Going right will lead you to a cave where somebody might get lost, but going left will make you meet up with the technician and give you an option as to whether or not you should investigate a strange noise in the distance.
+  
+  Fit Criterion: Testing the different scenarios and seeing if they lead to their own arc in the story
+
+________________________________________________________________
+Criteria 13: Plan out where each choice will lead
+ 
+  Motivation: This is a visual novel style adventure where your actions count. Every choice should have its own unique outcome and reaction, no two playthroughs will be the same.
+  
+  Examples: Going right will lead you to a cave where somebody might get lost, but going left will make you meet up with the technician and give you an option as to whether or not you should investigate a strange noise in the distance. If you do, your technician will be eaten offscreen by an unknown speciman
+  
+  Fit Criterion: Map out where I want everything to go and where it should lead to next, along with its potential impacts on the crew.
+
+________________________________________________________________
+Criteria 14: Have all the characters maintain a unique dynamic with the main character
+ 
+  Motivation: This is will make the interactions all the more meaningful and help players gain a connection to the non-playable characters. This will also have a different effect on the overall story if anything bad happens to said characters.
+  
+  Examples: The technician is like a little brother the the captain, very eager and trusting. Meanwhile, the engineer is more gruff and distrusting, so if he is the only one surviving, he might as well ditch you.
+  
+  Fit Criterion: Coming up wiht the characters and seeing how to make their personalities crucial to the game's momentum.
+
+________________________________________________________________
+Criteria 15: Keep track of the items needed to fix the ship
+ 
+  Motivation: Following your crew or venturing out alone to collect parts is the key to getting off the planet and back home to base.
+  
+  Examples: There are at least five parts needed, the game will tell you what those parts are. Advancing in the story will lead to you finding them.
+  
+  Fit Criterion: Testing the counter.
+
+________________________________________________________________
+Criteria 16: Tell us when we have a part and how many we still need
+ 
+  Motivation: The game should be able to keep track of which parts are collected and give us a count
+  
+  Examples: If the gears are found, the remaining parts count is displayed when the blueprint is opened
+  
+  Fit Criterion: There should be an in-game counter for the parts
+
+________________________________________________________________
+Criteria 17: Display the part when found
+ 
+  Motivation: When a part is found, the blueprint menu should fill in the silhouette of that part
+  
+  Examples: Opening up the blueprint menu after finding an item should display a diagram blueprint with the missing parts filled in once collected.
+  
+  Fit Criterion: Testing a booleon for collected that when set to true, displays that part
+
+________________________________________________________________
+Criteria 18: Create in game map
+ 
+  Motivation: A map option from the options should show where the player is
+  
+  Examples: Opening up the map menu will show the parts of the planet that have been discorvered with a colored dot representing the player and their current location.
+  
+  Fit Criterion: Create a map background and a booleon for which dot should be lit.
+
+________________________________________________________________
+Criteria 19: Have the in game map reveal the covered up places once they are interacted with
+ 
+  Motivation: Since this is a desolate planet, the characters have never been here before. Their space gps-equivalents cannot pick up any familiarity, leaving them blank until they make progress
+  
+  Examples: Once a new area, such as the cave, is found, that area will no longer be obscured on the navigator.
+  
+  Fit Criterion: Create a map background and a booleon for when an area should be visible.
+
+________________________________________________________________
+Criteria 20: Give the player the option to back up in certain scenarios
+ 
+  Motivation: There has to be a way for a player to go back a plave when the situation calls for it.
+  
+  Examples: When there is nothing to do or there is a dead end, clicking a back arrow should make you go back a spot.
+  
+  Fit Criterion: Implement a function for going backwards and having the map react.
+
+________________________________________________________________
+Criteria 21: Send you back to start to meet up with everyone when given the option
+ 
+  Motivation: After a certain point has been reached, a button should emerge so you will be warped back to where the crew is suppossed to meet up
+  
+  Examples: When you find a part or lose a crewmember, you must report it back to base
+  
+  Fit Criterion: Implement a function for sending you back to the others.
