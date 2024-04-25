@@ -185,3 +185,106 @@ Criteria 21: Send you back to start to meet up with everyone when given the opti
   Examples: When you find a part or lose a crewmember, you must report it back to base
   
   Fit Criterion: Implement a function for sending you back to the others.
+
+________________________________________________________________
+Criteria 22: Keep track of which ending to give the player
+ 
+  Motivation: The goodness of the ending should vary depending on who is still alive
+  
+  Examples: If you go through without anyone dying, you get the best enidng. If all of the crewmates die, you get the worst ending.
+  
+  Fit Criterion: PLay through the game and see how the endings have changed
+
+________________________________________________________________
+Criteria 23: Give the perfect ending
+ 
+  Motivation: If all the members make it to the end of the game, the perfect ending should be rewarded
+  
+  Examples: Once all the crew have made it to rebuilding the ship, they will all be shown escaping
+  
+  Fit Criterion: Play through the game without anyone dying and see if the perfect ending has been rewarded
+
+________________________________________________________________
+Criteria 24: Give the worst ending
+ 
+  Motivation: If none the members make it to the end of the game, the  worst ending will be shown.
+  
+  Examples: If you make it to the end and all your teammates have died, you are shown all alone
+  
+  Fit Criterion: Play through the game with everyone dying and see if the worst ending has been rewarded
+
+________________________________________________________________
+Criteria 24: Tell players which ending they achieved
+ 
+  Motivation: After the ending is shown, we should tell players which type of ending they earned, along with a score
+  
+  Examples: Once the game is done, a text box will display the type of ending you got along with a score that goes up to three stars (like Angry Birds)
+  
+  Fit Criterion: Play through the game and get all the endings
+
+________________________________________________________________
+Criteria 24: Have some ambient music or sound effects included
+ 
+  Motivation: Including sound will add to the atmosphere and overall experience.
+  
+  Examples: When starting your adventure on the planet, appropriate background music will start
+  
+  Fit Criterion: Insert audio files and see if they work and play in the right locations
+
+________________________________________________________________
+Criteria 25: Have a shock chord play when a team member dies
+ 
+  Motivation: Adding this sound will make each death recognizable and impactful.
+  
+  Examples: If we go back and find the technician dead, the sound will start.
+  
+  Fit Criterion: See if this plays with the death of a crew member.
+
+________________________________________________________________
+Criteria 26: Include a list in the main menu containing the different endings earned
+ 
+  Motivation: The players can see what endings they got
+  
+  Examples: For each ending you earn, the summary and score is unlocked in the main menu.
+  
+  Fit Criterion: Everytime I finish the game, I will check the menu
+
+________________________________________________________________
+Criteria 27: Include a mission log
+ 
+  Motivation: Include a summary from the main character explaining what has happened so far
+  
+  Examples: When something happens, such as a part being found, it will be included in the summary
+  
+  Fit Criterion: After an event, I will check the log menu
+
+________________________________________________________________
+Criteria 28: Have a load menu option if a previous unfinished game is saved
+ 
+  Motivation: When returning to a session, players should be able to pick up from where they left off.
+  
+  Examples: If I saved after three parts have been found and the technician died, when I load again, the game should have all these.
+  
+  Fit Criterion: Save the game, leave, click load, and see if the progress has been remembered
+
+________________________________________________________________
+Criteria 29: Have the options to turn sound, music, or voices off
+ 
+  Motivation: Not all players want to hear talking or music, so we should include the option to turn it off.
+  
+  Examples: If I click for the music to turn off, the music should be muted.
+  
+  Fit Criterion: Turn the mute for one of the options on and see if it is silent
+
+________________________________________________________________
+Criteria 30: If there is a saved game, it should be over written when a new game is saved
+ 
+  Motivation: Saving a new game over an old one should replace it
+  
+  Examples: If the saved game has to found parts and I start a new game and save it, that should overwrite the original game
+  
+  Fit Criterion: Save on an old game, start a new one, and save over it. The new game should take its place.
+
+
+
+
