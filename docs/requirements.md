@@ -285,6 +285,15 @@ Criteria 30: If there is a saved game, it should be over written when a new game
   
   Fit Criterion: Save on an old game, start a new one, and save over it. The new game should take its place.
 
+________________________________________________________________
+Criteria 31: The game should be able to run on any desktop
+ 
+  Motivation: Mac users, microsfot users, etc should have the game playable on their machine.
+  
+  Examples: If I can play this on a Mac, I should also be able to play it on a Windows computer
+  
+  Fit Criterion: Test the game on different computer brands and see if they work.
+
 
 
 
