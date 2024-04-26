@@ -294,6 +294,87 @@ Criteria 31: The game should be able to run on any desktop
   
   Fit Criterion: Test the game on different computer brands and see if they work.
 
+________________________________________________________________
+Criteria 32: The game should be able to run on any browser
+ 
+  Motivation: Safari, Chrome, Firefox, etc should be able to play the game
+  
+  Examples: If I can play this on Safari, I should also be able to play it on Chrome.
+  
+  Fit Criterion: Test the game on different browsers and see if they work.
+
+________________________________________________________________
+Criteria 33: The game should be able to run on any virtual machine
+ 
+  Motivation: Mac, Ubuntu, etc should be able to play the game
+  
+  Examples: If I can play this on Mac, I should also be able to play it on Ubuntu.
+  
+  Fit Criterion: Test the game on different virtual machines and see if they work.
+
+________________________________________________________________
+Criteria 34: The game should be accessable even to people who don't play these sorts of games
+ 
+  Motivation: I want this game to be enjoyable for anyone curious to play and for them to not feel alienated by the mechanics and set up
+  
+  Examples: My dormmate, my mom, and my professor are all able to understand how the game works and are able to get invested.
+  
+  Fit Criterion: Show the game to other people of differing demographics and get feedback from them.
+
+________________________________________________________________
+Criteria 35: The game should be able to simply explain itself to players
+ 
+  Motivation: To ensure the game can be enjoyed and picked up by anyone, the game should give a brief summary of how it works.
+  
+  Examples: Before players are able to make their first action, a text box should explain how this works, what the goals are, and what to avoid.
+  
+  Fit Criterion: While letting others play test, see if they can understand what to do once the game begins.
+
+________________________________________________________________
+Criteria 36: Players should feel a connection to the NPC's (Non-Playable Characters)
+ 
+  Motivation: Any good story must have characters that appeal to the audience, this game should be no exception since it is the player's duty to keep them safe.
+  
+  Examples: The characters should have appealing designs and personalities so that the players agree they need to look out for the others.
+  
+  Fit Criterion: Get player feedback on how they react to the characters.
+
+________________________________________________________________
+Criteria 37: Upon completion, the endings must impact the viewers
+ 
+  Motivation: Since the game has overarcing stories based on the player's decisions, they must feel good on the good endings and feel bad if they lose a crew member.
+  
+  Examples: When getting the worst ending, the player is suppossed to feel like they failed not only the game, but their crew.
+  
+  Fit Criterion: Get player feedback on how they react to the ending.
+
+________________________________________________________________
+Criteria 38: The player should feel a sense of progress when obtaining items
+ 
+  Motivation: The goal is to find all the parts and get everyone to safety. Whenever a part is found, the player feels like they are making progress and can do this.
+  
+  Examples: The game should inform you when a part has been obtained and including the part count will give a sense of progression.
+  
+  Fit Criterion: See how players feel when they find a part or save a crewmate.
+
+________________________________________________________________
+Criteria 39: The world should feel strange but not overwhelming
+ 
+  Motivation: This is a slow paced game but with high consequence, and another key to creating this on top of a good story is giving people a world they have never seen before, especially since the game is in space.
+  
+  Examples: When exploring, the planet must feel intimidating, but still give players the urge to keep exploring.
+  
+  Fit Criterion: Gauge how players react to the environments.
+
+________________________________________________________________
+Criteria 40: Keep the game engaging
+ 
+  Motivation: This is a slow paced game that involves a lot of reading, which for many can get boring very quickly. Every game has o be fun, they are made to entertain after all.
+  
+  Examples: Keep the text short, sweet, and too the point, and maybe add a bit to the character interaction.
+  
+  Fit Criterion: Ask how the players are enjoying the game as they test it out and see what can be improved.
+
 
 
 
