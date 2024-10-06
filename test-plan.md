@@ -23,36 +23,36 @@
 
 ### PRODUCT
 
-- **Product Name:** {product name}
+- **Product Name:** Space Team Rescue
 - **Product Line Portfolio:** Insurance
 
 ### PROJECT DESCRIPTION
 
-A short concise project description
-
+This is a test for my upcoming senior project. The main one will be about you and your space team crash landing on a planet, and it's your job to fix the ship and make sure everyone is alive. This will be a visual novel sort of adventure, with your choices affecting the outcome. My demo focusses on character interaction and the found count.
 ### TEST PERSONNEL
 
-- {list of test personnel}
+- Joey Beasley
 
 ### PROGRAMMERS
 
-- {test of programmers}
+- Joey Beasley
 
 ## UNIT TEST SECTION
 
 ### UNIT TEST STRATEGY / EXTENT OF UNIT TESTING:
 
-Evaluate new features and bug fixes introduced in this release
+This one is a simple demo that shows the various character interactions, how they affect gameplay, and seeing which one of your teammate have been found.
 
 ### UNIT TEST CASES
 
 | \#  | OBJECTIVE | INPUT | EXPECTED RESULTS | TEST DELIVERABLES |
 | --- | --------- | ----- | ---------------- | ----------------- |
-| 1   |           |       |                  |                   |
+| 1   |  Should Display Game and characters         |       |  Should be displayed      | Everything appears    |
+| 2   |  Should Count how many are found and let me end based on if the count is thre |       |  Should only access last part is found = 3 | It accesses the last part once the found count is 3, but does not end the game yet   |
 
 ## REGRESSION TEST SECTION
 
-Ensure that previously developed and tested software still performs after change.
+It works after every properly implemented change.
 
 ### REGRESSION TEST STRATEGY
 
