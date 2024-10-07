@@ -8,9 +8,9 @@
 - [UNIT TEST SECTION](#unit-test-section)
   - [UNIT TEST STRATEGY / EXTENT OF UNIT TESTING:](#unit-test-strategy--extent-of-unit-testing)
   - [UNIT TEST CASES](#unit-test-cases)
-- [REGRESSION TEST SECTION](#regression-test-section)
-  - [REGRESSION TEST STRATEGY](#regression-test-strategy)
-  - [REGRESSION TEST CASES](#regression-test-cases)
+- [TEST PARTICIPANTS SECTION](#regression-test-section)
+  - [TEST PARTICIPANTS STRATEGY](#regression-test-strategy)
+  - [REGRESSION PARTICIPANTS CASES](#regression-test-cases)
 - [INTEGRATION TEST SECTION](#integration-test-section)
   - [INTEGRATION TEST STRATEGY AND EXTENT OF INTEGRATION TESTING](#integration-test-strategy-and-extent-of-integration-testing)
   - [INTEGRATION TEST CASES](#integration-test-cases)
@@ -50,19 +50,19 @@ This one is a simple demo that shows the various character interactions, how the
 | 1   |  Should Display Game and characters         |       |  Should be displayed      | Everything appears    |
 | 2   |  Should Count how many are found and let me end based on if the count is thre |       |  Should only access last part is found = 3 | It accesses the last part once the found count is 3, but does not end the game yet   |
 
-## REGRESSION TEST SECTION
+## TEST PARTICIPANTS SECTION
 
 It works after every properly implemented change.
 
-### REGRESSION TEST STRATEGY
+### TEST PARTICIPANTS STRATEGY
 
-Evaluate all reports introduced in previous releases
+Let some friends and other volunteers test my demo and give me feedback
 
-### REGRESSION TEST CASES
+### TEST PARTICIPANTS CASES
 
-| #   | OBJECTIVE | INPUT | EXPECTED RESULTS | OBSERVED |
+| #   | SUBJECT NAME | BACKGROUND | PROCESS | OBSERVED |
 | --- | --------- | ----- | ---------------- | -------- |
-| 1   |           |       |                  |          |
+| 1   |    Evan Hill       | Dormmate      | Picked up on it pretty quickly, though I did explain that some options are recursive until a goal is met. He found the overall game neat    | Typo on the first text box, I fixed it once he was done. I also realized I hadn't implemented an option I had previously commented out in order to make room for testing, I fixed that as well by uncommenting it.         |
 
 ## INTEGRATION TEST SECTION
 
