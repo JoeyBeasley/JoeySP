@@ -90,6 +90,7 @@ Verify that the solution works for the user
 
 | #   | TEST ITEM | EXPECTED RESULTS | ACTUAL RESULTS | DATE |
 | --- | --------- | ---------------- | -------------- | ---- |
-| 1   |           |                  |                |      |
+| 1   |   Have it count who has been saved        | When the count is three, the "Report Back" button should finish the game                 |  It Ended the game once all had been found and I clicked "Report Back"              | 10-7-24     |
+
 
 ## Appendix
