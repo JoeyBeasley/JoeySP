@@ -24,7 +24,7 @@
 ### PRODUCT
 
 - **Product Name:** Space Team Rescue
-- **Product Line Portfolio:** Insurance
+- **Product Line Portfolio:** Visual Novel Adventure
 
 ### PROJECT DESCRIPTION
 
