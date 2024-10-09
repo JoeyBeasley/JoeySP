@@ -48,7 +48,8 @@ This one is a simple demo that shows the various character interactions, how the
 | \#  | OBJECTIVE | INPUT | EXPECTED RESULTS | TEST DELIVERABLES |
 | --- | --------- | ----- | ---------------- | ----------------- |
 | 1   |  Should Display Game and characters         |       |  Should be displayed      | Everything appears    |
-| 2   |  Should Count how many are found and let me end based on if the count is thre |       |  Should only access last part is found = 3 | It accesses the last part once the found count is 3, but does not end the game yet   |
+| 2   |  Should Count how many are found and let me end based on if the count is three |       |  Should only access last part is found = 3 | It accesses the last part once the found count is 3, but does not end the game yet   |
+| 3   | The count should not go up for a character if the wrong criteria is met. | Selecting what the character would not want      | The character should not have joined me, and I should be able to actiavte our convo again | It lets me try the conversation again, meaning the character has not joined me and the found counter has not gone up.   |
 
 ## TEST PARTICIPANTS SECTION
 
@@ -76,7 +77,7 @@ Evaluate all integrations with locally developed shared libraries, with consumed
 
 | #   | OBJECTIVE | INPUT | EXPECTED RESULTS | TEST DELIVERABLES |
 | --- | --------- | ----- | ---------------- | ----------------- |
-| 1   |           |       |                  |                   |
+| 1   |  Having the found counter be three should end the game  | Find and help all three members       |   After finding them all, I should actiavte the final scene by selecting "Report Back"              |                   |
 
 ## USER ACCEPTANCE TEST SECTION (To be completed by the business office)
 
@@ -84,13 +85,14 @@ Verify that the solution works for the user
 
 ### USER ACCEPTANCE TEST STRATEGY
 
-{Explain how user acceptance testing will be accomplished}
+See if things work
 
 ### USER ACCEPTANCE TEST CASES
 
 | #   | TEST ITEM | EXPECTED RESULTS | ACTUAL RESULTS | DATE |
 | --- | --------- | ---------------- | -------------- | ---- |
 | 1   |   Have it count who has been saved        | When the count is three, the "Report Back" button should finish the game                 |  It Ended the game once all had been found and I clicked "Report Back"              | 10-7-24     |
+| 2   |  Selecting the wrong thing will end the conversation, with the teammate not joining you | When the incorrect option is selected, you are taken back to the previous menu  |  I was relocated to the last menu.    | 10-9-24     |
 
 
 ## Appendix
