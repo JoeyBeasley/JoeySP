@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -39,7 +39,7 @@ label start:
 
     default blasterowned = False
 
-     default navigatorJoined = False
+    default navigatorJoined = False
 
     $ lossCount = 0
 
@@ -110,19 +110,19 @@ label junction1:
           #    jump caveintro
 
         "Return to ship":
-          if part1found && part2found:
-            if navigatoralive && mechanicalive:
+          if part1found and part2found:
+            if navigatoralive and mechanicalive:
                 jump ending1
-            if navigatoralive && !mechanicalive:
+            if navigatoralive and !mechanicalive:
                 jump ending2
-            if !navigatoralive && !mechanicalive:
+            if !navigatoralive and !mechanicalive:
                 jump ending3
-            if !navigatoralive && mechanicalive:
+            if !navigatoralive and mechanicalive:
                 jump ending4
               
           else:
-                "We can't leave yet."
-              jump junction1
+            "We can't leave yet."
+            jump junction1
 
 
 
@@ -312,22 +312,24 @@ label jungleintro:
 
 label jungle:
     scene bg jungle
-
-   menu:
+    menu:
 
        "Look to the left":
 
             jump jungleLeftIntro
+        
+        #"Check under that rock":
+         #   "There's..."
+
+          #  "Nothing to see."
+
+           # jump jungle
 
        "What was that sound?":
             jump jungleSound
-
-      "Check under that rock":
-            "There's..."
-
-            "Nothing to see."
-
-            jump jungle
+            
+            
+        
 
 
 label jungleLeftIntro:
@@ -345,7 +347,7 @@ label jungleLeftIntro:
             jump jungle
 
         "Look deeper":
-            jump jungleLeft
+            jump jungleJunctionLeft
 
 label jungleSound:
 
@@ -369,7 +371,7 @@ label jungleSound:
 
     "Blaster obtained!"
 
-    blasterowned = True
+    $ blasterowned = True
 
     n "Now remember, only use this in emergencies! We don't want to disturb this planet's ecosystem!"
 
@@ -379,7 +381,7 @@ label jungleSound:
 
         "You and me!":
             n "That's the spirit, young chap!"
-            navigatorJoined = True
+            $ navigatorJoined = True
             jump jungleJunction
 
         "I shall continue alone.":
@@ -399,7 +401,7 @@ label jungleJunction:
         "The right route seems more peaceful":
             if navigatoralive:
                 jump jungleJunctionRight
-            else
+            else:
                 "I can't go back..."
                 jump jungleJunction
 
@@ -417,10 +419,10 @@ label jungleJunctionLeft:
             "Blast":
                 n "That'll show him!"
                 n "Now grab that part!"
-                part2found = True
+                $ part2found = True
                 n "Let's skedaddle on out of here!"
                 jump junction1
-    else
+    else:
         "I hear it!"
         "What the heck is that thing?"
         "It's got something in its mouth"
@@ -429,7 +431,7 @@ label jungleJunctionLeft:
         menu: 
             "Blast":
                 n "That was almost too close!"
-                part2found = True
+                $ part2found = True
                 n "I gotta get out of here!"
                 jump junction1
 
@@ -442,7 +444,7 @@ label jungleJunctionRight:
 
         jump jungleJunction        
 
-    else
+    else:
         "Wait! I see something through the bushes!"
         "Is that...the navigator?"
         "And what's that-"
@@ -457,14 +459,14 @@ label jungleJunctionRight:
             n "By the way"
             n "Look what I found!"
             "Part obained"
-            part2found = True
+            $ part2found = True
             n "Let's skedaddle on out of here!"
             jump junction1
         if randfloat = 0:
             "Blast!"
             "I missed..."
             "I couldn't save the navigator"
-            navigatoralive = False
+            $ navigatoralive = False
             jump jungleJunction
 
 
@@ -473,7 +475,7 @@ label jungleJunctionRight:
 label ending1:
     show mechanic
     m "We made it! All thanks to you!"
-    m "Now let me help you fix the ship
+    m "Now let me help you fix the ship"
     hide mechanic
     show navigator   
     n "Spot on, young man!"
@@ -494,12 +496,12 @@ label ending2:
 label ending3:
 
    show themuscle
-    c "Looks like you and me are the only ones left."
-    c "This is what I get for putting you in charge"
-    c "You have let down this operation, you're lucky I don't leave you behind on this planet."
-    return
+   c "Looks like you and me are the only ones left."
+   c "This is what I get for putting you in charge"
+   c "You have let down this operation, you're lucky I don't leave you behind on this planet."
+   return
 
-labe ending4:
+label ending4:
     show mechanic
     m "Okie dokie! The ship's all fixed!"
     m "Wait, where's the navigator?"
