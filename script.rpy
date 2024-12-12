@@ -79,7 +79,7 @@ label start:
 
     jump junction1
 label junction1:
-
+    scene bg cave
     menu:
 
         "Where shall I look?"
@@ -113,11 +113,11 @@ label junction1:
           if part1found and part2found:
             if navigatoralive and mechanicalive:
                 jump ending1
-            if navigatoralive and !mechanicalive:
+            if navigatoralive and not mechanicalive:
                 jump ending2
-            if !navigatoralive and !mechanicalive:
+            if not navigatoralive and not mechanicalive:
                 jump ending3
-            if !navigatoralive and mechanicalive:
+            if not navigatoralive and mechanicalive:
                 jump ending4
               
           else:
@@ -166,7 +166,8 @@ label Waterfall2:
             jump waterfall
 
         "Investigate the object":
-            jump Waterfall4
+            "Wait, that's not the part we need."
+            jump waterfall
 
 label Waterfall3intro:
     scene bg waterfall
@@ -216,6 +217,8 @@ label WaterfallUpper:
     m "Let's hurry back!"
 
     m "We found the first part sir!"
+
+    hide mechanic
 
     show themuscle
 
@@ -386,6 +389,7 @@ label jungleSound:
 
         "I shall continue alone.":
             n "Oh, well carry on!"
+            hide navigator
             jump jungleJunction
 
 label jungleJunction:
@@ -407,7 +411,7 @@ label jungleJunction:
 
 label jungleJunctionLeft:
     if navigatorJoined:
-        show Navigator
+        show navigator
         n "There's what we were picking up"
         n "Whoo! Look at the size of that puppy!"
         n "Aw, and look! He's chewing on that ship part!"
@@ -421,6 +425,7 @@ label jungleJunctionLeft:
                 n "Now grab that part!"
                 $ part2found = True
                 n "Let's skedaddle on out of here!"
+                hide navigator
                 jump junction1
     else:
         "I hear it!"
