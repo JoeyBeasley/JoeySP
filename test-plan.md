@@ -51,8 +51,8 @@ This one is a simple demo that shows the various character interactions, how the
 | 2   |  Should Count how many are found and let me end based on if the count is three |       |  Should only access last part is found = 3 | It accesses the last part once the found count is 3, but does not end the game yet   |
 | 3   | The count should not go up for a character if the wrong criteria is met. | Selecting what the character would not want      | The character should not have joined me, and I should be able to actiavte our convo again | It lets me try the conversation again, meaning the character has not joined me and the found counter has not gone up.   |
 | 4   | If it keeps track of if someone has died and it affects the ending |  Load a file, Let someone die, Get to the ending and see if it is the corresponding one.   | The charcacters who are alive should appear at the end, with the dead characters being missing, with their absence leaving an impact | The alive are still around  |
-| 5   | It should keep track of the items that have been found  | Play the game and find one of the tools (such as the wrench), Select the leave option once warped back to the hub, See if it only lets me leave if all parts are found | The alive are still around  |
-
+| 5   | It should keep track of the items that have been found  | Play the game and find one of the tools (such as the wrench), Select the leave option once warped back to the hub, See if it only lets me leave if all parts are found | It knows whether or not I found the parts and only lets me leave when they have been retrieved |
+| 6   | If the navigator has given us a blaster, we can use it  | After starting a new game, travel through the forest, and locate the Navigator, Get my blaster, Access both scenarios that involve the blaster, See if I am allowed to use it if I select the option, if I can, I have it! | The program knows whether or not not I have it, with the spacebar command appearing to shoot an alien |
 ## TEST PARTICIPANTS SECTION
 
 It works after every properly implemented change.
