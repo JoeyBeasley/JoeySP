@@ -50,6 +50,8 @@ This one is a simple demo that shows the various character interactions, how the
 | 1   |  Should Display Game and characters         |       |  Should be displayed      | Everything appears    |
 | 2   |  Should Count how many are found and let me end based on if the count is three |       |  Should only access last part is found = 3 | It accesses the last part once the found count is 3, but does not end the game yet   |
 | 3   | The count should not go up for a character if the wrong criteria is met. | Selecting what the character would not want      | The character should not have joined me, and I should be able to actiavte our convo again | It lets me try the conversation again, meaning the character has not joined me and the found counter has not gone up.   |
+| 4   | If it keeps track of if someone has died and it affects the ending |  Load a file, Let someone die, Get to the ending and see if it is the corresponding one.   | The charcacters who are alive should appear at the end, with the dead characters being missing, with their absence leaving an impact | The alive are still around  |
+| 5   | It should keep track of the items that have been found  | Play the game and find one of the tools (such as the wrench), Select the leave option once warped back to the hub, See if it only lets me leave if all parts are found | The alive are still around  |
 
 ## TEST PARTICIPANTS SECTION
 
@@ -93,6 +95,7 @@ See if things work
 | --- | --------- | ---------------- | -------------- | ---- |
 | 1   |   Have it count who has been saved        | When the count is three, the "Report Back" button should finish the game                 |  It Ended the game once all had been found and I clicked "Report Back"              | 10-7-24     |
 | 2   |  Selecting the wrong thing will end the conversation, with the teammate not joining you | When the incorrect option is selected, you are taken back to the previous menu  |  I was relocated to the last menu.    | 10-9-24     |
+
 
 
 ## Appendix
