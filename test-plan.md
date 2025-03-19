@@ -79,12 +79,7 @@ Combine individual software modules and test as a group.
 ### INTEGRATION TEST STRATEGY AND EXTENT OF INTEGRATION TESTING
 
 Evaluate all integrations with locally developed shared libraries, with consumed services, and other touch points.
-
-### INTEGRATION TEST CASES
-
-| #   | OBJECTIVE | INPUT | EXPECTED RESULTS | TEST DELIVERABLES |
-| --- | --------- | ----- | ---------------- | ----------------- |
-| 1   |  Having the found counter be three should end the game  | Find and help all three members       |   After finding them all, I should actiavte the final scene by selecting "Report Back"              |                   |
+  
 
 ## USER ACCEPTANCE TEST SECTION (To be completed by the business office)
 
@@ -92,7 +87,7 @@ Verify that the solution works for the user
 
 ### USER ACCEPTANCE TEST STRATEGY
 
-See if things work
+Ask someone I know to playtest the game, testing their interactions with the game
 
 ### USER ACCEPTANCE TEST CASES
 
