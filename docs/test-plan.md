@@ -16,6 +16,7 @@
   - [INTEGRATION TEST CASES](#integration-test-cases)
 - [USER ACCEPTANCE TEST SECTION (To be completed by the business office)](#user-acceptance-test-section-to-be-completed-by-the-business-office)
   - [USER ACCEPTANCE TEST STRATEGY](#user-acceptance-test-strategy)
+  - [DELIVERABLES](#deliverbales)
   - [USER ACCEPTANCE TEST CASES](#user-acceptance-test-cases)
 - [Appendix](#appendix)
 
@@ -41,7 +42,7 @@ This is a test for my upcoming senior project. The main one will be about you an
 
 ### UNIT TEST STRATEGY / EXTENT OF UNIT TESTING:
 
-This one is a simple demo that shows the various character interactions, how they affect gameplay, and seeing which one of your teammate have been found.
+The purpose of this section is to run the game beginning to end to see if everything works as planned. Me or the selected participant will play through the game, do the multiple paths, and play the minigames.
 
 ### UNIT TEST CASES
 
@@ -64,7 +65,7 @@ It works after every properly implemented change.
 
 ### TEST PARTICIPANTS STRATEGY
 
-Let some friends and other volunteers test my demo and give me feedback
+For test participants, I will first ask someone, such as a friend or family member, to test the game by starting a new save. As they play through, I will see if everything not only functions properly (no glitches or typos) but will ask for their feedback as they test it, along with observing how they interact with it. Once they beat the game (or reach any of its alternate endings), I will ask for their feedback, what they liked, and what can be improved. My goal is to have at least five different people test it out and give input.
 
 ### TEST PARTICIPANTS CASES
 
@@ -79,22 +80,35 @@ Combine individual software modules and test as a group.
 ### INTEGRATION TEST STRATEGY AND EXTENT OF INTEGRATION TESTING
 
 Evaluate all integrations with locally developed shared libraries, with consumed services, and other touch points.
+
   
 
-## USER ACCEPTANCE TEST SECTION (To be completed by the business office)
+## USER ACCEPTANCE TEST SECTION (To be completed by the business office) 
 
-Verify that the solution works for the user
+The purpose here is to see how a human player interacts with the game. 
+
+Independent Variables - Gender, Age, Place of origin, Major
+
+Dependent Variables - Experience with games, ability to beat the game, performance in the minigames and quick time events.
 
 ### USER ACCEPTANCE TEST STRATEGY
 
-Ask someone I know to playtest the game, testing their interactions with the game
+SUMMARY-I will first ask someone, such as a friend or family member, to test the game by starting a new save. As they play through, I will see if everything not only functions properly (no glitches or typos) but will ask for their feedback as they test it, along with observing how they interact with it. Once they beat the game (or reach any of its alternate endings), I will ask for their feedback, what they liked, and what can be improved. My goal is to have at least five different people test it out and give input. 
+
+GOAL-I want to make sure the game can be easily understood, enjoyed, and accessed by different people (spanning across major, interests, age, etc). Some people I am considering using for feedback include my dormmate, some friends on campus (with differing majors), and my Grammama.
+
+### DELIVERABLES
+
+The ending they get
+Which charcaters have survived
+Scores in the shooting minigames
 
 ### USER ACCEPTANCE TEST CASES
 
 | #   | TEST ITEM | EXPECTED RESULTS | ACTUAL RESULTS | DATE |
 | --- | --------- | ---------------- | -------------- | ---- |
-| 1   |   Have it count who has been saved        | When the count is three, the "Report Back" button should finish the game                 |  It Ended the game once all had been found and I clicked "Report Back"              | 10-7-24     |
-| 2   |  Selecting the wrong thing will end the conversation, with the teammate not joining you | When the incorrect option is selected, you are taken back to the previous menu  |  I was relocated to the last menu.    | 10-9-24     |
+| 1   |         |                |               |     |
+| 2   |   |   |     |     |
 
 
 
