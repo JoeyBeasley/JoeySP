@@ -17,6 +17,8 @@ image bg jungle = "Forrest.jpg"
 
 image bg cave = "Cave.jpg"
 
+image bg crashedbg = "crashedbg.jpg"
+
 image bg spacetravel = "spacetravel.jpg"
 
 image meteorite = "meteorite.png"
@@ -25,13 +27,23 @@ image meteoriteTop = "meteoritetop.png"
 
 image greenalien = "greenalien.png"
 
-image standardalien = "alien.png"
+image standardalien = "monster.png"
+
+image monster = "monster.png"
 
 image meteoritebottom = "meteoritebottom.png"
 
 image bg deck = "Deckbg.jpg"
 
 image grey = "grey.png"
+
+image ointment = "ointment.jpeg"
+
+image pad = "pad.jpg"
+
+image injection = "injection.png"
+
+image bandaid = "bandaid.png"
 
 
 
@@ -65,6 +77,7 @@ label start:
     default howlong = False
     $ questions = 0
     $ alreadyAsked = False
+    $ doctorchances = 0
 
     $ cont = 0 #continue variable
     $ arr_keys = ["K_UP", "K_LEFT", "K_DOWN", "K_RIGHT"]
@@ -82,12 +95,16 @@ label start:
 
     default navigatorJoined = False
 
+    $ color_list = ['Black', 'Orange', 'Purple', 'Turqouise', 'Viridian']
+
     $ lossCount = 0
 
     $ fruitcount = 0
     $ gun_size = (330 / 2, 384 / 2)
     $ shots = 0
     $ nShot = 0
+    $ nCaught = 0
+    $ catches = 0
     $ gun_pos = (0, 0)
     $ gun_opos = (renpy.get_physical_size()[0] / 2 - gun_size[0] / 2, renpy.get_physical_size()[1] - gun_size[1] +  60)
 
@@ -109,9 +126,13 @@ label start:
 
     $ povname = renpy.input("Please insert your name", length=32)
 
+    play music "Space Land.mp3"
+
     "Welcome aboard [povname]."
 
     "Your team of space travelers has crash landed on a mysterious planet."
+
+    play sound "navOh.mp3"
 
     "As the newly elected pilot, it is your sworn duty to find the parts needed to repair the ship"
 
@@ -129,12 +150,13 @@ label start:
 
     c "Remember, first rule of leadership,"
 
-    c "Everything is your fault."
+    c "Everything is your fault, so don't fail this mission, rookie!"
+    stop music fadeout 1.0
 
     jump junction1
 label junction1:
     play music "GreemaMain.mp3"
-    scene bg cave
+    scene bg crashedbg
     menu:
 
         pov "Where shall I look?"
@@ -165,7 +187,7 @@ label junction1:
           #    jump caveintro
 
         "Meteor (TESTING ONLY)":
-            jump meteor
+            jump arrowNavigatorgame
 
         "Volcano (TESTING ONLY)":
             jump Volcanominigame
@@ -174,196 +196,31 @@ label junction1:
           if part1found and part2found:
             if navigatorhurt:
                 jump doctor
-            if navigatoralive and mechanicalive:
-                jump fixit
-            if navigatoralive and not mechanicalive:
-                jump ending2
-            if not navigatoralive and not mechanicalive:
-                jump ending3
-            if not navigatoralive and mechanicalive:
-                jump fixit
+
+            else:
+                if navigatoralive and mechanicalive:
+                    jump fixit
+                if navigatoralive and not mechanicalive:
+                    jump ending2
+                if not navigatoralive and not mechanicalive:
+                    jump ending3
+                if not navigatoralive and mechanicalive:
+                    jump fixit
             
               
           else:
             pov "We can't leave yet."
             jump junction1
 
-label fixit:
 
-    show mechanic
-
-    m "Alright! All I gotta do is make some quick adjustments"
-
-    m "Ok boys, time to do your thing"
-
-    hide mechanic
-
-    show themuscle
-
-    c "[povname], you're telling me she talks to her tools?"
-
-    menu:
-
-        "What? It's cute!":
-            c "Hmph"
-        "I know, weird.":
-            c "This is between us"
-    hide themuscle
-
-    show mechanic
-
-    m "A one, a two, a skiddly diddly doo!"
-
-    hide mechanic
-
-    "Click on the correct tool needed based on Mily's description"
-
-    "Any mistakes, and she may have to start over."
-
-
-    jump fixminigame
-
-label fixminigame:
-
-    #click right tool
-
-    while questions < 5:
-        $randomizer = renpy.random.randint(1,5) #Replace 3 with the total number of questions.
-        if randomizer == 1 and not questionone:
-            call question1
-        if randomizer == 2 and not questiontwo:
-            call question2
-        if randomizer == 3 and not questionthree:
-            call question3 #And so on for as many questions as you have.
-        if randomizer == 4 and not questionfour:
-            call question4
-        if randomizer == 5 and not questionfive:
-            call question5
-
-
-
-
-
-    if navigatoralive and mechanicalive:
-        jump ending1
-
-    if not navigatoralive and mechanicalive:
-        jump ending4
-
-label question1:
-    m "It appears a few screws are loose"
-
-    menu:
-        "{image=wrench.png}":
-            m "Wait, that's not right, let me start over!"
-            $ questions = 0
-            jump fixminigame
-        "{image=screwdriver.png}":
-            m "That's right!"
-            m "Alright...righty tighty...and..."
-            m "Fixed!"
-            $ questions += 1
-            $ questionone = True
-            jump fixminigame
-        "{image=hammer.png}":
-            m "That can't be right"
-            $ questions = 0
-            jump fixminigame
-label question2:
-    m "Looks like the battery needs a bit of a boost!"
-
-    menu:
-        "{image=cables.png}":
-            m "Time to give this ship a little cpr!"
-            m "Clear!"
-            $ questions += 1
-            $ questiontwo = True
-            jump fixminigame
-        "{image=wrench.png}":
-            m "Nope, that won't work"
-            m "Come on, gotta concentrate!"
-            $ questions = 0
-            jump fixminigame
-            
-        "{image=pliers.png}":
-            m "I don't see how that's going to work, but the clamps do remind me of something important!"
-            $ questions = 0
-            jump fixminigame
-label question3:
-    m "Aw, some little bolts have gotten lose!"
-
-    menu:
-        "{image=screwdriver.png}":
-            m "That's great for screwing in...well, screws, but not bolts."
-            $ questions = 0
-            jump fixminigame
-        "{image=hammer.png}":
-            m "Wrong tool!"
-            m "Sorry Harold H. Hamilton III, but you're gonna have to wait your turn!"
-            $ questions = 0
-            jump fixminigame
-            
-        "{image=wrench.png}":
-            m "Perfect! Here goes!"
-            $ questions += 1
-            $ questionthree = True
-            jump fixminigame
-label question4:
-    m "Whoa, we got a few nasty dents I gotta buff in!"
-
-    menu:
-        "{image=cables.png}":
-            m "Not yet you two!"
-            m "Gee, Black Betty and Red Rocket are so impatient sometimes..."
-            $ questions = 0
-            jump fixminigame
-        "{image=hammer.png}":
-            m "Come on, Harold, we got some work to do!"
-            "Bang! Bang! Bang!"
-            m "Heh, always an eager one, isn't he?"
-            show themuscle
-            c "Mily! Stay focussed!"
-            hide themuscle
-            m "Sorry boss, I mean, 'sir'!"
-            $ questions += 1
-            $ questionfour = True
-            jump fixminigame
-
-            
-        "{image=screwdriver.png}":
-            m "Something's not right here..."
-            $ questions = 0
-            jump fixminigame
-label question5:
-    m "There's a few broken wires I gotta snip off!"
-
-    menu:
-        "{image=screwdriver.png}":
-            m "This won't do"
-            $ questions = 0
-            jump fixminigame
-        "{image=cables.png}":
-            m "Wait a minute...these two are wires"
-            m "Not fit for the job!"
-            $ questions = 0
-            jump fixminigame
-            
-        "{image=pliers.png}":
-            m "Here goes!"
-            "Snip! Snap!"
-            $ questions += 1
-            $ questionfive = True
-            jump fixminigame
-            
-
-
-
-    
 
 
 label waterfallintro:
 
+
+  stop music fadeout 0.5
   scene bg waterfall
+  play music "PPGF.mp3"
   
   show mechanic
   m "Oh, there you are!"
@@ -416,7 +273,7 @@ label Waterfall3intro:
 
     m "It's been so lonely out out here...with no one to chat with."
 
-    if !alreadyAsked:
+    if alreadyAsked != True:
 
         m "Hey, since we've gotten to know each other a bit, why don't we ask some questions to each other along the way?"
 
@@ -432,6 +289,8 @@ label Waterfall3intro:
                 $ color = renpy.input("What is your favorite color?", length=32)
 
                 m "[color], eh? That's a very lovely one indeed!"
+                $ alreadyAsked = True
+                $ sheAsked = True
 
                 
 
@@ -626,74 +485,90 @@ label WaterfallImposter:
 
     if sheAsked:
         "What is my favorite color?"
+        $ wrong_color = renpy.random.choice(color_list)
+        if wrong_color == color:
+            $ wrong_color = renpy.random.choice(color_list)
 
         menu:
             "[color]":
-                play sound blast
+                play sound "blaster.mp3"
                 show mechanic
                 m "I knew you could do it, [povname]!"
                 m "And what a lovely coinky dink! There's the tool we need!"
                 $ part1found = True
+                stop music fadeout 0.5
                 jump junction1
-            "(Insert random color generator)":
+            "[wrong_color]":
                 play sound blast
                 m "Ow!"
                 "Oh no! The mechanic is severly wounded!"
                 "There's the part! I gotta get us out of here!"
+                $ part1found = True
+                $ mechanicalive = False
+                jump junction1
 
     if youAsked:
         if movie:
             "What is your favorite movie?"
             menu:
                 "The one where the cute robots fall in love":
-                    play sound blast
+                    play sound "blaster.mp3"
                     show mechanic
                     m "I knew you could do it, [povname]!"
                     m "And what a lovely coinky dink! There's the tool we need!"
                     $ part1found = True
+                    stop music fadeout 0.5
                     jump junction1
                 "The one with the boy and the giant robot":
-                    play sound blast
+                    play sound "blaster.mp3"
                     m "Ow!"
                     "Oh no! The mechanic is severly wounded!"
                     "There's the part! I gotta get us out of here!"
                     $ part1found = True
+                    $ mechanicalive = False
+                    stop music fadeout 0.5
                     jump junction1
         if firsttool:
             "Who was your first tool?"
             menu:
                 "Trusty Rusty":
-                    play sound blast
+                    play sound "blaster.mp3"
                     show mechanic
                     m "I knew you could do it, [povname]!"
                     m "And what a lovely coinky dink! There's the tool we need!"
                     $ part1found = True
+                    stop music fadeout 0.5
                     jump junction1
                 "Useful Uter":
                     m "Wait, what kinda name is Uter?"
-                    play sound blast
+                    play sound "blaster.mp3"
                     m "Ow!"
                     "Oh no! The mechanic is severly wounded!"
                     "There's the part! I gotta get us out of here!"
                     $ part1found = True
+                    stop music fadeout 0.5
+                    $ mechanicalive = False
                     jump junction1
         if howlong:
             "How many years have you been with the Space Corps?"
             menu:
                 "Five years":
-                    play sound blast
+                    play sound "blaster.mp3"
                     show mechanic
                     m "I knew you could do it, [povname]!"
                     m "And what a lovely coinky dink! There's the tool we need!"
                     $ part1found = True
+                    stop music fadeout 0.5
                     jump junction1
                 "Ten years":
                     m "Wait, what kinda name is Uter?"
-                    play sound blast
+                    play sound "blaster.mp3"
                     m "Ow!"
                     "Oh no! The mechanic is severly wounded!"
                     "There's the part! I gotta get us out of here!"
                     $ part1found = True
+                    stop music fadeout 0.5
+                    $ mechanicalive = False
                     jump junction1
 
 
@@ -714,9 +589,373 @@ label WaterfallUpperBad:
     $ part1found = True
 
     "Guess I'd best head back..."
+    stop music fadeout 0.5
 
     jump junction1
 
+
+
+label doctor:
+
+    "The navigator got stung by that beast out there."
+
+    "He doesn't look very good..."
+
+    show themuscle
+
+    c "Here's the first aid kit!"
+
+    c "Now hurry up and cure him!"
+
+    c "Remember the items in the correct order!"
+
+    #select the right tools in the right order, set background to med box
+
+    #if you succedd, he lives
+
+    jump doctorgame
+
+label doctorgame:
+
+    show pad
+
+    pause 1.0
+
+    hide pad
+
+    show ointment
+
+    pause 1.0
+
+    hide ointment
+
+    show injection
+
+    pause 1.0
+
+    hide injection
+
+    show bandaid
+
+    pause 1.0
+
+    hide bandaid
+
+    menu:
+        "{image=ointment.png}":
+            if doctorchances == 0:
+                c "Try again, you got one more chance to fix him, hurry"
+                $ doctorchances = 1
+                jump doctorgame
+            if doctorchances == 1:
+                "It's too late, we can't save him now..."
+                $ navigatoralive = False
+                stop music fadeout 0.5
+                jump junction1
+        "{image=injection.png}":
+            if doctorchances == 0:
+                c "Try again, you got one more chance to fix him, hurry"
+                $ doctorchances = 1
+                jump doctorgame
+            if doctorchances == 1:
+                "It's too late, we can't save him now..."
+                $ navigatoralive = False
+                stop music fadeout 0.5
+                jump junction1
+        "{image=pad.jpg}":
+            c "Good, now hurry, select the next item to help him!"
+    menu:
+        
+        "{image=injection.png}":
+            if doctorchances == 0:
+                c "Try again, you got one more chance to fix him, hurry"
+                $ doctorchances = 1
+                jump doctorgame
+            if doctorchances == 1:
+                "It's too late, we can't save him now..."
+                $ navigatoralive = False
+                stop music fadeout 0.5
+                jump junction1
+            
+        "{image=pad.jpg}":
+            if doctorchances == 0:
+                c "Try again, you got one more chance to fix him, hurry"
+                $ doctorchances = 1
+                jump doctorgame
+            if doctorchances == 1:
+                "It's too late, we can't save him now..."
+                $ navigatoralive = False
+                stop music fadeout 0.5
+                jump junction1
+            
+        "{image=ointment.jpeg}":
+            c "Nice work, no stopping now."
+    menu:
+        
+        "{image=injection.png}":
+            c "..."
+
+            "What's the matter commander?"
+
+            c "I'm just...uncomfortable around needles"
+
+            c "Stop staring at me! I'm not the one in need of medical assistance!"
+
+            
+        "{image=pad.jpg}":
+            if doctorchances == 0:
+                c "Try again, you got one more chance to fix him, hurry"
+                $ doctorchances = 1
+                jump doctorgame
+            if doctorchances == 1:
+                "It's too late, we can't save him now..."
+                $ navigatoralive = False
+                stop music fadeout 0.5
+                jump junction1
+            
+        "{image=ointment.jpeg}":
+            if doctorchances == 0:
+                c "Try again, you got one more chance to fix him, hurry"
+                $ doctorchances = 1
+                jump doctorgame
+            if doctorchances == 1:
+                "It's too late, we can't save him now..."
+                $ navigatoralive = False
+                stop music fadeout 0.5
+                jump junction1
+    menu:
+        
+        "{image=bandaid.png}":
+            show navigator
+
+            n "You saved my life"
+
+            n "Good show, [povname]!"
+
+            $ navigatorhurt = False
+            stop music fadeout 0.5
+
+            jump junction1
+
+            
+        "{image=pad.jpg}":
+            if doctorchances == 0:
+                c "Try again, you got one more chance to fix him, hurry"
+                $ doctorchances = 1
+                stop music fadeout 0.5
+                jump doctorgame
+            if doctorchances == 1:
+                "It's too late, we can't save him now..."
+                $ navigatoralive = False
+                stop music fadeout 0.5
+                jump junction1
+                
+                
+            
+        "{image=ointment.jpeg}":
+            if doctorchances == 0:
+                c "Try again, you got one more chance to fix him, hurry"
+                $ doctorchances = 1
+                jump doctorgame
+            if doctorchances == 1:
+                "It's too late, we can't save him now..."
+                $ navigatoralive = False
+                stop music fadeout 0.5
+                jump junction1
+                
+
+            
+    
+label fixit:
+
+
+    show mechanic
+    play music "MPDS.mp3"
+
+    m "Alright! All I gotta do is make some quick adjustments"
+
+    m "Ok boys, time to do your thing"
+
+    hide mechanic
+
+    show themuscle
+
+    c "[povname], you're telling me she talks to her tools?"
+
+    menu:
+
+        "What? It's cute!":
+            c "Hmph"
+        "I know, weird.":
+            c "This is between us"
+    hide themuscle
+
+    show mechanic
+
+    m "A one, a two, a skiddly diddly doo!"
+
+    hide mechanic
+
+    "Click on the correct tool needed based on Mily's description"
+
+    "Any mistakes, and she may have to start over."
+
+
+    jump fixminigame
+
+label fixminigame:
+
+    #click right tool
+
+    while questions < 5:
+        $randomizer = renpy.random.randint(1,5) #Replace 3 with the total number of questions.
+        if randomizer == 1 and not questionone:
+            call question1
+        if randomizer == 2 and not questiontwo:
+            call question2
+        if randomizer == 3 and not questionthree:
+            call question3 #And so on for as many questions as you have.
+        if randomizer == 4 and not questionfour:
+            call question4
+        if randomizer == 5 and not questionfive:
+            call question5
+
+
+
+
+
+    if navigatoralive and mechanicalive:
+        
+        
+        show mechanic
+        m "We made it! All thanks to you!"
+        #m "Now let me help you fix the ship"
+        hide mechanic
+        show navigator   
+        n "Spot on, young man!"
+        hide navigator
+        show themuscle
+        c "I must say, I am impressed."
+        c "Fine, I guess you've earned your star. Nice work!"
+        c "Before we climb aboard, now would be a good time to hit 'Save'."
+        hide themuscle
+
+        #implement arrow memory game
+        jump arrowNavigatorgame
+        return
+
+    if not navigatoralive and mechanicalive:
+        jump ending4
+
+label question1:
+    m "It appears a few screws are loose"
+
+    menu:
+        "{image=wrench.png}":
+            m "Wait, that's not right, let me start over!"
+            $ questions = 0
+            jump fixminigame
+        "{image=screwdriver.png}":
+            m "That's right!"
+            m "Alright...righty tighty...and..."
+            m "Fixed!"
+            $ questions += 1
+            $ questionone = True
+            jump fixminigame
+        "{image=hammer.png}":
+            m "That can't be right"
+            $ questions = 0
+            jump fixminigame
+label question2:
+    m "Looks like the battery needs a bit of a boost!"
+
+    menu:
+        "{image=cables.png}":
+            m "Time to give this ship a little cpr!"
+            m "Clear!"
+            $ questions += 1
+            $ questiontwo = True
+            jump fixminigame
+        "{image=wrench.png}":
+            m "Nope, that won't work"
+            m "Come on, gotta concentrate!"
+            $ questions = 0
+            jump fixminigame
+            
+        "{image=pliers.png}":
+            m "I don't see how that's going to work, but the clamps do remind me of something important!"
+            $ questions = 0
+            jump fixminigame
+label question3:
+    m "Aw, some little bolts have gotten lose!"
+
+    menu:
+        "{image=screwdriver.png}":
+            m "That's great for screwing in...well, screws, but not bolts."
+            $ questions = 0
+            jump fixminigame
+        "{image=hammer.png}":
+            m "Wrong tool!"
+            m "Sorry Harold H. Hamilton III, but you're gonna have to wait your turn!"
+            $ questions = 0
+            jump fixminigame
+            
+        "{image=wrench.png}":
+            m "Perfect! Here goes!"
+            $ questions += 1
+            $ questionthree = True
+            jump fixminigame
+label question4:
+    m "Whoa, we got a few nasty dents I gotta buff in!"
+
+    menu:
+        "{image=cables.png}":
+            m "Not yet you two!"
+            m "Gee, Black Betty and Red Rocket are so impatient sometimes..."
+            $ questions = 0
+            jump fixminigame
+        "{image=hammer.png}":
+            m "Come on, Harold, we got some work to do!"
+            "Bang! Bang! Bang!"
+            m "Heh, always an eager one, isn't he?"
+            show themuscle
+            c "Mily! Stay focussed!"
+            hide themuscle
+            m "Sorry boss, I mean, 'sir'!"
+            $ questions += 1
+            $ questionfour = True
+            jump fixminigame
+
+            
+        "{image=screwdriver.png}":
+            m "Something's not right here..."
+            $ questions = 0
+            jump fixminigame
+label question5:
+    m "There's a few broken wires I gotta snip off!"
+
+    menu:
+        "{image=screwdriver.png}":
+            m "This won't do"
+            $ questions = 0
+            jump fixminigame
+        "{image=cables.png}":
+            m "Wait a minute...these two are wires"
+            m "Not fit for the job!"
+            $ questions = 0
+            jump fixminigame
+            
+        "{image=pliers.png}":
+            m "Here goes!"
+            "Snip! Snap!"
+            $ questions += 1
+            $ questionfive = True
+            jump fixminigame
+            
+
+
+
+    
 
 
 
@@ -725,7 +964,7 @@ label WaterfallUpperBad:
 
 label jungleintro:
 
-  play music "jungle.mp3"
+  play music "Bramble Blast.mp3"
 
   scene bg jungle
 
@@ -840,6 +1079,8 @@ label junglesound2:
 
     n "In all my years of traveling, I can't leave home without my metal detector, my glasses, my map, my telescope, my binocular, my unocular, my trinocular..."
 
+    play sound "navOh.mp3"
+
     n "Oh!"
 
     n "And a spare blaster!"
@@ -853,6 +1094,8 @@ label junglesound2:
     n "Now remember, only use this in emergencies! We don't want to disturb this planet's ecosystem!"
 
     n "So, shall we continue our search together?"
+
+    play sound "navOfCourse.mp3"
 
   
     n "That's the spirit, young chap!"
@@ -887,6 +1130,7 @@ label jungleJunctionLeft:
     hide navigator
     show monster
     play sound "Monstersound4.mp3"
+    play sound "navISay.mp3"
     n "Whoo [povname]! Look at the size of that beast!"
     n "Aw, and look! He's chewing on that ship part!"
     n "Wait! That's ours!"
@@ -915,11 +1159,13 @@ label jungleJunctionLeft:
     else:
         "Oh no! The navigator's down!"
 
-        $ navigatorHurt = True
+        $ navigatorhurt = True
 
         n "Here...I got the part...the creature dropped it."
             
         $ part2found = True
+
+        hide monster
 
         show themuscle
 
@@ -950,22 +1196,22 @@ label jungleJunctionRight:
 
 
 
-label ending1:
-    show mechanic
-    m "We made it! All thanks to you!"
+#label ending1:
+    #3show mechanic
+    #m "We made it! All thanks to you!"
     #m "Now let me help you fix the ship"
-    hide mechanic
-    show navigator   
-    n "Spot on, young man!"
-    hide navigator
-    show themuscle
-    c "I must say, I am impressed."
-    c "Fine, I guess you've earned your star. Nice work!"
-    c "Before we climb aboard, now would be a good time to hit 'Save'."
-    hide themuscle
+    #hide mechanic
+    #show navigator   
+    #n "Spot on, young man!"
+    #hide navigator
+    #show themuscle
+    #c "I must say, I am impressed."
+    #c "Fine, I guess you've earned your star. Nice work!"
+    #c "Before we climb aboard, now would be a good time to hit 'Save'."
+    #hide themuscle
 
     #implement arrow memory game
-    jump arrowNavigatorgame
+    #jump arrowNavigatorgame
 
 screen uparrowCommand:
     frame:
@@ -1049,7 +1295,7 @@ label arrowNavigatorgame:
 
     scene bg spacetravel
 
-    play music "jungle.mp3"
+    play music "Corneria.mp3"
     #Boswer inseide story QTE music
 
     n "Great Vader's Ghost! It's a meteor storm!"
@@ -1075,7 +1321,7 @@ label meteor2:
     "Left, Right, Up, Left"
     #"Applebees"
     $ direction = ""
-    call screen forkeys(3)
+    call screen forkeys(2)
     if _return == "1231":
         "Alright, just a little more and we should be there..."
         jump meteor3
@@ -1087,48 +1333,63 @@ label meteor2:
 label meteor3:    
     "Down, Left, Down, Up"
     $ direction = ""
-    call screen forkeys(3)
+    call screen forkeys(2)
     if _return == "4143":
         "Phew, we made it!"
-        jump meteorDodgeEnding
+        stop music fadeout 1.0
+
+        scene bg deck
+
+        play music "victory.mp3"
+
+        show navigator
+
+        n "See there? I knew we could do it!"
+
+        n "Thanks to you, the ship is in one piece, as are we!"
+
+        hide navigator
+
+        if mechanicalive:
+
+            show mechanic
+
+            m "You were amazing out there!"
+
+            m "You truly are the greatest, Rusty would agree!"
+
+            hide mechanic
+
+            show themuscle
+
+            c "You managed to impress me out there, [povname]."
+
+            c "Welcome to the team!"
+
+            c "You're free to fly with us anytime!"
+    
+            $ renpy.full_restart()
+        else:
+            show themuscle
+
+            c "Don't celebrate too soon, our mechanic is out of commission"
+
+            c "So the team is down one valued member"
+
+            c "We might allow you to join a future mission, but for now, you're better off staying here!"
+    
+            $ renpy.full_restart()
+
     else: 
         jump meteorCrash
     
     
     
-label meteorDodgeEnding:
+#label meteorDodgeEnding:
 
-    stop music fadeout 1.0
+    
 
-    scene bg deck
-
-    play music "victory.mp3"
-
-    show navigator
-
-    n "See there? I knew we could do it!"
-
-    n "Thanks to you, the ship is in one piece, as are we!"
-
-    hide navigator
-
-    show mechanic
-
-    m "You were amazing out there!"
-
-    m "You truly are the greatest, Rusty would agree!"
-
-    hide mechanic
-
-    show themuscle
-
-    c "You managed to impress me out there, [povname]."
-
-    c "Welcome to the team!"
-
-    c "You're free to fly with us anytime!"
-
-    jump endgame
+   # jump endgame
 label endgame:
 
     "Thanks for playing!"
@@ -1333,18 +1594,11 @@ label day2Menu:
         "Volcano":
 
             if volcanofood:
-              "I already found the wrench"
+              "I already found some meat"
               jump day2Menu
-            else:
-              jump waterfallintro
+           
 
-        "Cave":
-
-            if water:
-                "I found some water"
-                jump day2Menu
-            else:
-                jump Cave
+        
 
         "Shoreline":
 
@@ -1355,7 +1609,7 @@ label day2Menu:
                 jump shoreline         
 
         "Return to base":
-            if FoodminigameCount = 3:
+            if FoodminigameCount == 2:
                 jump foodEnding
 
             else:
@@ -1391,8 +1645,8 @@ label Volcanominigame:
 
 
 screen targets:
-    $ xx = renpy.random.randint(50, 750)
-    $ yy = renpy.random.randint(50, 500)
+    $ xx = renpy.random.randint(50, 1700)
+    $ yy = renpy.random.randint(50, 1100)
     text str(nShot) xpos 25 ypos 15
     timer 10.0 action Jump("Volcanominigame_end")
     timer 1.0 action SetScreenVariable("xx", renpy.random.randint(30, 750)) repeat(True)
@@ -1432,37 +1686,57 @@ label Volcanominigame_end:
     $ FoodminigameCount += 1
     jump day2Menu
 
-label Cave:
 
-    "My team and I are pretty parched!"
 
-    "Luckily this cave should have some fresh water"
-
-    #make minigame where you catch falling water droplets
-
-label Shoreline:
+label shoreline:
 
     "Some fresh fruit should be here, just what the navigator needs for his teeth!"
 
     #matching minigame
+    call screen fruits
 
-label doctor:
+screen fruits:
+    $ xx = renpy.random.randint(50, 750)
+    $ yy = renpy.random.randint(50, 500)
+    text str(nCaught) xpos 25 ypos 15
+    timer 10.0 action Jump("Fruitminigame_end")
+    timer 1.0 action SetScreenVariable("xx", renpy.random.randint(30, 750)) repeat(True)
+    timer 1.0 action SetScreenVariable("yy", renpy.random.randint(30, 500)) repeat(True)
+    imagebutton idle"fruit.jpeg" hover "fruit.jpeg" action [SetVariable("nCaught", (nCaught+1))] xanchor 0.5 xpos xx yanchor 0.5 ypos yy
 
-    "The navigator got stung by that beast out there."
+label Fruitminigame_end:
+     #timer = pygame.time.Clock()
 
-    "He doesn't look very good..."
+   
+    
+    #call screen targets
 
-    show themuscle
+    "Let's see..."
 
-    c "Here's the first aid kit!"
+    "I shot %(nCaught)d targets."
 
-    c "Now hurry up and cure him!"
+    if nCaught > 7:
+        "That should be enough for everyone."
+    if nCaught > 4 and nCaught < 7:
+        "Not bad, but we may need to split."
 
-    #select the right tool, set background to med box
+    if nCaught < 4 and nCaught > 0:
+        "That's not a lot."
 
-    #if you succedd, he lives
+    if nCaught == 0:
+        "I didn't get any..."
+        "If I keep letting my guard down, my team will starve!"
 
-label FoodEnding:
+
+    #if volcanoBird > 0:
+        #volcanofood = true
+
+    $ FoodminigameCount += 1
+    jump day2Menu
+
+
+
+label foodEnding:
 
     show navigator
     n "Well, good news, we got the ship running"
@@ -1499,5 +1773,12 @@ label FoodEnding:
 
     n "Well, long story short, I got to see the midair anti gravity physics of my own ejected stomach acid."    
 
+    c "Ok you two, strap in. We can't afford any more losses on this mission"
+
+    c "Besides, if anything happens to this ship before we return to base, we're toast!"
+
+    jump arrowNavigatorgame
+
 
     return
+
