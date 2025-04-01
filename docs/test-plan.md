@@ -107,8 +107,11 @@ Scores in the shooting minigames
 
 | #   | TEST ITEM | EXPECTED RESULTS | ACTUAL RESULTS | DATE |
 | --- | --------- | ---------------- | -------------- | ---- |
-| 1   |         |                |               |     |
-| 2   |   |   |     |     |
+| 1   | Test Player should understand the basics and the goal        | My test subject easily picked up on the mechanics and what to do               |               |     |
+| 2   | Test player gets the ending that corresponds to who is alive  | If a character dies off, they should not show up in the end, which impacts the story's direction  |     |     |
+| 3   | The meteor dodge minigame responds to player input  | If the player crashes the ship, they have to restart the minigame  |     |     |
+| 4   | The tool minigame works  | The test player can understand what tool is needed from the prompt and selects the correct one |     |     |
+| 5   |  |  |     |     |
 
 
 
