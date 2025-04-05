@@ -132,7 +132,7 @@ label start:
 
     "Your team of space travelers has crash landed on a mysterious planet."
 
-    play sound "navOh.mp3"
+    #play sound "navOh.mp3"
 
     "As the newly elected pilot, it is your sworn duty to find the parts needed to repair the ship"
 
@@ -186,15 +186,15 @@ label junction1:
          # else:
           #    jump caveintro
 
-        "Meteor (TESTING ONLY)":
-            jump arrowNavigatorgame
+        #"Meteor (TESTING ONLY)":
+         #   jump arrowNavigatorgame
 
-        "Volcano (TESTING ONLY)":
-            jump Volcanominigame
+        #"Volcano (TESTING ONLY)":
+         #   jump Volcanominigame
 
         "Return to ship":
           if part1found and part2found:
-            if navigatorhurt:
+            if navigatorhurt and navigatoralive:
                 jump doctor
 
             else:
@@ -239,7 +239,7 @@ label waterfall:
 
             jump Waterfall2
 
-        "Follow Mily":
+        "Follow The Mechanic":
 
             jump Waterfall3intro
 
@@ -250,7 +250,7 @@ label Waterfall2:
 
     pov "I see something shiny, maybe that's a part!"
 
-    pov "Wait a minute, what about Mily?"
+    pov "Wait a minute, what about The Mechanic?"
 
     menu:
 
@@ -832,6 +832,7 @@ label fixminigame:
         #m "Now let me help you fix the ship"
         hide mechanic
         show navigator   
+        play sound "navGoodOnYou.mp3"
         n "Spot on, young man!"
         hide navigator
         show themuscle
@@ -965,6 +966,7 @@ label question5:
 label jungleintro:
 
   play music "Bramble Blast.mp3"
+  #$ renpy.music.set_volume(0.5,0,"Bramble Blast.mp3")
 
   scene bg jungle
 
@@ -976,7 +978,7 @@ label jungleintro:
 
   "What was that sound? Must be some kind of creature"
 
-  "The navigator said he did enjoy seeing wildlife"
+  "Our navigator, Ned said he did enjoy seeing wildlife"
 
   "I find that sound, I might find him"
 
@@ -1090,6 +1092,10 @@ label junglesound2:
     "Blaster obtained!"
 
     $ blasterowned = True
+
+    n "When you have to shoot something, like say, an agressive lifeform,"
+
+    n "there will be a green bar at the top of your screen. Hit the spacebar once before it empties!"
 
     n "Now remember, only use this in emergencies! We don't want to disturb this planet's ecosystem!"
 
@@ -1300,7 +1306,7 @@ label arrowNavigatorgame:
 
     n "Great Vader's Ghost! It's a meteor storm!"
 
-    n "We gotta get through! Quick, type the correct buttons I list! It's our only hope of getting out of here!"
+    n "We gotta get through! Quick, hit the space bar after I give you the directions and then, type the corresponding arrow keys in the correct order! It's our only hope of getting out of here!"
     
     #display keys for a few seconds, if not entered in time, game over
     
@@ -1431,7 +1437,7 @@ label meteorCrash:
 label ending2:
 
     show navigator
-    n "We found all the parts, wait, where's Mily?"
+    n "We found all the parts, wait, where's The Mechanic?"
     hide navigator
     show themuscle
     c "It seems we've lost her"
@@ -1464,6 +1470,7 @@ label ending4:
 label meteor:
 
     scene bg spacetravel
+    play music "Corneria.mp3"
 
     m "I can't pick up a thing! It's nearly pitch black out here!"
 
@@ -1556,12 +1563,24 @@ label crash:
     #return
 
 label meteorDodgeEndingNoNav:
+    scene bg deck
+
+    play music "Mission Failed.mp3"
 
     show mechanic
 
+
     m "In spite of the lack of navigator, we made it!"
 
-    return
+    show themuscle
+
+    c "Don't celebrate too soon, our mechanic is out of commission"
+
+    c "So the team is down one valued member"
+
+    c "We might allow you to join a future mission, but for now, you're better off staying here!"
+
+    $ renpy.full_restart()
 
 
 label day2NoMech:
@@ -1781,4 +1800,3 @@ label foodEnding:
 
 
     return
-
