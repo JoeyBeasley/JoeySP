@@ -39,6 +39,8 @@ image grey = "grey.png"
 
 image ointment = "ointment.jpeg"
 
+image bg volcano = "volcano.jpg"
+
 image pad = "pad.jpg"
 
 image injection = "injection.png"
@@ -154,6 +156,8 @@ label start:
     stop music fadeout 1.0
 
     jump junction1
+
+
 label junction1:
     play music "GreemaMain.mp3"
     scene bg crashedbg
@@ -186,8 +190,8 @@ label junction1:
          # else:
           #    jump caveintro
 
-        #"Meteor (TESTING ONLY)":
-         #   jump arrowNavigatorgame
+        "Meteor (TESTING ONLY)":
+            jump arrowNavigatorgame
 
         #"Volcano (TESTING ONLY)":
          #   jump Volcanominigame
@@ -499,7 +503,7 @@ label WaterfallImposter:
                 stop music fadeout 0.5
                 jump junction1
             "[wrong_color]":
-                play sound blast
+                #play sound Blast
                 m "Ow!"
                 "Oh no! The mechanic is severly wounded!"
                 "There's the part! I gotta get us out of here!"
@@ -1141,7 +1145,7 @@ label jungleJunctionLeft:
     n "Aw, and look! He's chewing on that ship part!"
     n "Wait! That's ours!"
     n "He's growling at us!"
-    n "Quick! Stun him with the spacebar before he attacks!"
+    n "Quick! Stun him with the spacebar before he attacks! Remember, only press the button once!" 
     #hide navigator
 
         #menu: 
@@ -1264,31 +1268,31 @@ screen forkeys(max_time):
     hbox:
         align (0.5, 0.5)
         vbox:
-            textbutton "1 LEFT":            
+            textbutton " ":            
             # imagebutton:
                 #idle "leftarrow.png"
                 action SetVariable("direction", direction+"1")
                 keysym "K_LEFT"
         vbox:
-            textbutton "2 RIGHT":
+            textbutton " ":
             # imagebutton:
                 #idle "rightarrow.png"
                 action SetVariable("direction", direction+"2")
                 keysym "K_RIGHT"
         vbox:
-            textbutton "3 UP":
+            textbutton " ":
             # imagebutton:    
                 #idle "uparrow.png"
                 action SetVariable("direction", direction+"3")
                 keysym "K_UP"
         vbox:
-            textbutton "4 DOWN":
+            textbutton " ":
             # imagebutton:
                 #idle "downarrow.png"
                 action SetVariable("direction", direction+"4")
                 keysym "K_DOWN"
         vbox:
-            textbutton "5 SPACE":
+            textbutton " ":
             # imagebutton:
                 #idle "downarrow.png"
                 action SetVariable("direction", direction+"5")
@@ -1307,6 +1311,8 @@ label arrowNavigatorgame:
     n "Great Vader's Ghost! It's a meteor storm!"
 
     n "We gotta get through! Quick, hit the space bar after I give you the directions and then, type the corresponding arrow keys in the correct order! It's our only hope of getting out of here!"
+
+    n "Remember, only enter the buttons once, otherwise we'll oversteer and lose control!"
     
     #display keys for a few seconds, if not entered in time, game over
     
@@ -1603,7 +1609,7 @@ label day2Menuintro:
 
 label day2Menu:
 
-    
+    scene bg crashedbg    
 
     "Where shall I look?"
 
@@ -1636,6 +1642,8 @@ label day2Menu:
                 jump day2Menu
 
 label Volcano:
+
+    scene bg volcano
 
     "There's the volcano, I can already feel the heat!"
 
@@ -1800,3 +1808,4 @@ label foodEnding:
 
 
     return
+
