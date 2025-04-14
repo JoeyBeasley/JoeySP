@@ -70,18 +70,19 @@ https://github.com/JoeyBeasley/JoeySP
 
 
 ## Test Results
-| \#  | Results |
-|1  | Works |
-|2  | Successful |
-|3  | Successful |
-|4  | Successful |
-|5  | Successful |
-|6  | Successful |
-|7  | Successful |
-|8  | Successful |
-|9  | Successful |
-|10  | Successful |
-|11  | Successful |
+| \#  | Expected | Results | 
+| --- |--------- | ------- |
+| 1   |  When the code says show/hide a character, they should appear    |   The characters appear when prompted and hide for another character    | 
+| 2   |  The leave command should only work if both parts are found   |   The booleans and if statements work and I cannot leave if I don’t have all the parts yet    | 
+| 3   |  You answer or she answers and the question is brought up later    |   I am able to ask or answer and it keeps track of that    | 
+| 4   |  Can’t leave day 1 if mechanic is dead, hard minigame when navigator dies. I play through and test the scenarios of each/both of them alive or dead   |   The respective events are triggered    | 
+| 5   |  If I have the part from waterfall, I cannot go back to that place   |   The game does not allow me to return there once I have the part    | 
+| 6   |  If I have the blaster, I can use it, if not, mechanic use her wrench to ward off alien   |   The prompt works for both cases    | 
+| 7   |  That jump should take me back to the menu    |   I am led back to the menu when I find a part    | 
+| 8   |  If the counter reaches five, the ship should be fixed. If wrong answer, I have to do it all again    |   The counter corresponds to answered correctly and the minigame is completed once it reaches five    | 
+| 9   |  If wrong arrows are typed, you crash and are given option to start over. If the right ones are pressed, the next section starts    |   When the wrong buttons are pressed, I crash. Otherwise, I move on to the next part before winning, starting the end sequence    | 
+| 10   |  If I press the wrong button, the ship crashes and I am given the option to start over. Pressing spacebar blasts a meteor    |   It responds to the right and wrong input, including getting rid of the meteorite   | 
+
 
 
 
