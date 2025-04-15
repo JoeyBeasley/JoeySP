@@ -29,7 +29,7 @@
 
 ### PROJECT DESCRIPTION
 
-This is a test for my upcoming senior project. The main one will be about you and your space team crash landing on a planet, and it's your job to fix the ship and make sure everyone is alive. This will be a visual novel sort of adventure, with your choices affecting the outcome. My demo focusses on character interaction and the found count.
+This is my senior project. It is an interactive adventure about you and your space team crash landing on a planet, and it's your job to fix the ship and make sure everyone is alive. This is a visual novel sort of adventure, with your choices affecting the outcome. My demo focusses on character interaction and the found count.
 ### TEST PERSONNEL
 
 - Joey Beasley
