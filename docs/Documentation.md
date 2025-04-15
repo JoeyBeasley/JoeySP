@@ -14,6 +14,7 @@
 
 - [Challenges Overcome](#challenges)
 - [Future Enhancements](#future)
+- [Defense Presentation Slides](#slides)
 
 ## Statement of Purpose (with the Problem Statement)
 
@@ -88,6 +89,10 @@ https://github.com/JoeyBeasley/JoeySP
 
 ## Challenges Overcome
 When the game was suppossed to end with a return, the previous event restarted instead. I did some research and found the break command, "$ renpy.full_restart()", which stopped the game when I wanted it to. Finding minigame ideas was a challenge, as I needed something simple, something that would not take long to program. Luckily, there is a long list of games that can be coded into Renpy, which I utilized. At one point, the images tool still had their checkerboarded backgrounds. I removed them in an editor, but the images were way too big when loaded into the game, making the fixing minigame impossible to beat. I stopped the game and one by one, made smaller duplicates of the images and replaced the previous ones with those.
+
+## Defense Presentation Slide
+
+<image src="/images/Senior Project Presentation.pdf"/>
 
 ## Future Enhancements
 I hope to update more of the character designs (such as the mechanic's finger being on the wrong side of her hand) and make them look more refined, such as adding shading and more complex shapes. I would also like to make the game a bit longer and add more challenges, such as maybe a fourth teammate or another day on the planet. 
