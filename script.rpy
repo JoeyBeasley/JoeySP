@@ -190,8 +190,8 @@ label junction1:
          # else:
           #    jump caveintro
 
-        "Meteor (TESTING ONLY)":
-            jump arrowNavigatorgame
+        #"Meteor (TESTING ONLY)":
+         #   jump arrowNavigatorgame
 
         #"Volcano (TESTING ONLY)":
          #   jump Volcanominigame
